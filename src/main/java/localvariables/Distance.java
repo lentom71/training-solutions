@@ -1,17 +1,16 @@
 package localvariables;
 
 public class Distance {
-    double distanceKm;
-    boolean exact;
+    private double distanceInKm;
+    private boolean exact;
 
-    public Distance( double distanceKm,  boolean exact)
-    {
-        this.distanceKm = distanceKm;
+    public Distance(double distanceInKm, boolean exact) {
+        this.distanceInKm = distanceInKm;
         this.exact = exact;
     }
 
-    public double getDistanceKm() {
-        return distanceKm;
+    public double getDistanceInKm() {
+        return distanceInKm;
     }
 
     public boolean isExact() {
@@ -19,17 +18,5 @@ public class Distance {
     }
 
 
-}
 
-
-
-
-
-class DistanceMain {
-    public static void main(String[] args) {
-        Distance tavolsag = new Distance(100.50, false);
-        System.out.println(tavolsag.getDistanceKm() + " " + tavolsag.isExact());
-        int egeszResz = (int) tavolsag.getDistanceKm();
-        System.out.println(egeszResz);
-    }
 }

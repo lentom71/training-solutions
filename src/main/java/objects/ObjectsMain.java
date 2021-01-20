@@ -4,20 +4,41 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-class Konyv
-{
-}
-
-
 public class ObjectsMain {
     public static void main(String[] args) {
-        Konyv[] konyvek = {new Konyv(), new Konyv(), new Konyv()};
+        class Book {
 
-        List<Konyv> konyvek1 = Arrays.asList(new Konyv(), new Konyv());
+        }
+        new Book();
+        System.out.println(new Book());
 
-        List<Konyv> konyvek2 = new ArrayList<>();
-        konyvek2.add(new Konyv());
-        konyvek2.add(new Konyv());
-        konyvek2.add(new Konyv());
+        System.out.println("-------emptyBook--------");
+        Book emptyBook = null;
+        System.out.println(emptyBook);
+        System.out.println(emptyBook == null);
+
+        System.out.println("-------book--------");
+        Book book = new Book();
+        System.out.println(book);
+        book = null;
+        System.out.println(book);
+        book = new Book();
+        System.out.println(book);
+
+        System.out.println("-------anotherBook--------");
+        Book anotherBook = new Book();
+        System.out.println(anotherBook == book);
+        anotherBook = book;
+        System.out.println(anotherBook);
+        System.out.println(anotherBook == book);
+        System.out.println(anotherBook instanceof Book);
+
+        Book[] bookArray = {new Book(), new Book(), new Book()};
+        List<Book> bookList = Arrays.asList(new Book(), new Book(), new Book());
+        List<Book> emptyBookList = new ArrayList<>();
+        emptyBookList.add(new Book());
+        emptyBookList.add(new Book());
+        emptyBookList.add(new Book());
+
     }
 }

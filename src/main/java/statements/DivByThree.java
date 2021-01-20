@@ -4,16 +4,9 @@ import java.util.Scanner;
 
 public class DivByThree {
     public static void main(String[] args) {
+        System.out.println("Írj ide egy számot, megmondom, hárommal osztható-e!");
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Kérek egy egész számot!");
-        int x = scanner.nextInt();
-        if(x%3 == 0)
-        {
-            System.out.println("Szám osztható 3-al!");
-        }
-        else
-        {
-            System.out.println("Szám nem osztható 3-al!");
-        }
+        int i = scanner.nextInt();
+        System.out.println("A megadott szám " + (i%3==0?"":"nem ") + "osztható hárommal.");
     }
 }

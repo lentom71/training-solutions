@@ -1,28 +1,38 @@
 package week07.d02;
 
-import javax.swing.*;
+public interface User {
+    String getUsername();
 
-public interface User
-{
-   public  String getUsername();
+    String getFirstName();
 
-   public  String getFirstName();
+    String getLastName();
 
-   public String getLastName();
+    default String getFullName() {
+        return getFirstName() + " " + getLastName();
+    }
 
-   default String getFullName()
-   {
-       return getFirstName() + "  " + getLastName();
-   }
+/*    static User of(String userName, String firstName, String lastName) {
+        return new UserImpl(userName, firstName, lastName);
+    }*/
 
-   static User  of(String username, String firstname, String lastname)
-   {
-       return  new UserImpl (username, firstname, lastname );
-   }
+    static User of(String userName, String firstName, String lastName) {
+        return new User() {//anonymous innerclass
+            @Override
+            public String getUsername() {
+                return userName;
+            }
+
+            @Override
+            public String getFirstName() {
+                return firstName;
+            }
+
+            @Override
+            public String getLastName() {
+                return lastName;
+            }
+        };
+    }
 
 
-   static  void letr()
-   {
-       User user = new UserImpl("kovacs", "jozsi", "feri");
-   }
 }
