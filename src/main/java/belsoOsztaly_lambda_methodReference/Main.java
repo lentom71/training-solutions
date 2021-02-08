@@ -15,11 +15,13 @@ public class Main
 
 
 
+
         System.out.println(((UserSzuro) user -> {                                                //LAMBDA-val...
             return user.getName();
         }).usersz(new User("Tomi")));
 
                                                                                                  //     VAGY
+
 
         System.out.println(((UserSzuro) User::getName).usersz(new User("Tomi")));          //METHOD REFERENCE-el...
     }
