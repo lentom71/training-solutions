@@ -4,21 +4,23 @@ public class Main
 {
     public static void main(String[] args)                        //INTERFACE            MEGVALÓSITÁSA!
     {
-        System.out.println(new UserSzuro()                                 //BELSŐ osztéllyal...
+        System.out.println(new UserSzuro()                                                       //BELSŐ osztéllyal...
         {
             @Override
-            public void usersz(User user)
+            public String  usersz(User user)
             {
-                user.getName();                                            //     VAGY
+                return user.getName();                                                           //     VAGY
             }
-        });
+        }.usersz(new User("Tomi")));
 
 
 
-        System.out.println((UserSzuro) user -> user.getName());            //LAMBDA-val...
+        System.out.println(((UserSzuro) user -> {                                                //LAMBDA-val...
+            return user.getName();
+        }).usersz(new User("Tomi")));
 
-                                                                           //     VAGY
+                                                                                                 //     VAGY
 
-        System.out.println((UserSzuro) User::getName);                     //METHOD REFERENCE-el...
+        System.out.println(((UserSzuro) User::getName).usersz(new User("Tomi")));          //METHOD REFERENCE-el...
     }
 }
