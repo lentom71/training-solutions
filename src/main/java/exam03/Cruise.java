@@ -12,7 +12,7 @@ public class Cruise
     private Boat boat;
     private LocalDate sailing;
     private double basicPrice;
-    private List<Passenger>  passengers;
+    private List<Passenger>  passengers = new ArrayList<>();
 
     public Cruise(Boat boat, LocalDate sailing, double basicPrice)
     {
@@ -22,15 +22,15 @@ public class Cruise
     }
 
 
-    public boolean bookPassenger(Passenger passenger)
+    public void  bookPassenger(Passenger passenger)
     {
         if(boat.getMaxPassengers() > passengers.size())
         {
-            return true;
+            passengers.add(passenger);
         }
         else
         {
-            throw new IllegalStateException("Nincs elég hely!");
+            throw new IllegalArgumentException("Nincs elég hely!");
         }
     }
 
